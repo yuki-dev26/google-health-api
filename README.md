@@ -1,6 +1,10 @@
 # google-health-api
 
+![Tech Stack](https://skillicons.dev/icons?i=html,css,js,py,fastapi&perline=8)
+
 Google Health API（v4）で健康データを取得し、Gemini と組み合わせて活用するプロジェクトです。
+
+<img width="1200" height="606" alt="image" src="https://github.com/user-attachments/assets/c367251f-7c7d-4606-bd29-6b01f751e76d" />
 
 - **`demo/`** — ターミナルで過去1習慣の歩数・距離・睡眠データを表示する CLI デモ
 - **`playground/`** — 健康データを Gemini に渡して会話するWeb UI
