@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Playground</title>
+    <link
+      rel="icon"
+      href="/static/logo_google_health.ico"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <div>
+            <h1>Health Playground</h1>
+            <p class="subtitle">Gemini × Google Health</p>
+          </div>
+        </div>
+        <div class="header-actions">
+          <div class="date-range">
+            <input id="date-start" type="date" aria-label="開始日" />
+            <span class="date-sep">〜</span>
+            <input id="date-end" type="date" aria-label="終了日" />
+            <button id="date-apply" class="ghost-btn" type="button">
+              取得
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div id="banner" class="banner hidden">
+        <p>健康データを AI に渡すには Google Health の接続が必要です。</p>
+        <a href="/connect" class="connect-btn">接続する</a>
+      </div>
+
+      <div class="layout">
+        <aside class="data-panel">
+          <div class="panel-head">
+            <h2>取得データ</h2>
+            <span id="data-status" class="pill">—</span>
+          </div>
+          <div id="health-data" class="health-data">
+            <p class="empty-note">データ未取得</p>
+          </div>
+        </aside>
+
+        <section class="chat-section">
+          <div id="qa" class="qa" aria-live="polite">
+            <div id="qa-empty" class="qa-empty">
+              <button
+                id="ai-avatar-large"
+                type="button"
+                class="ai-avatar large ai-avatar-btn"
+                title="クリックでアイコン画像を設定"
+              >
+                <i class="fa-solid fa-robot icon" aria-hidden="true"></i>
+              </button>
+              <p>健康データをもとに会話をしましょう！</p>
+              <p class="qa-hint">アイコンをクリックすると画像を設定できます</p>
+            </div>
+          </div>
+
+          <footer class="composer">
+            <form id="form" class="composer-form">
+              <textarea
+                id="input"
+                rows="1"
+                placeholder="例: この期間の睡眠はどう？"
+                autocomplete="off"
+              ></textarea>
+              <button id="send-btn" type="submit" aria-label="送信">
+                <i class="fa-solid fa-paper-plane icon" aria-hidden="true"></i>
+              </button>
+            </form>
+          </footer>
+        </section>
+      </div>
+    </div>
+
+    <input id="ai-icon-file" type="file" accept="image/*" hidden />
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
